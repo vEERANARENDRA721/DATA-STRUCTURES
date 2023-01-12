@@ -1,10 +1,3 @@
-/* This program converts infix expression to postfix expression.
- * This program assume that there are Five operators: (*, /, +, -,^) 
-	in infix expression and operands can be of single-digit only.
- * This program will not work for fractional numbers.
- * Further this program does not check whether infix expression is 
- valid or not in terms of number of operators and operands.*/
-
 #include<stdio.h>
 #include<stdlib.h>      /* for exit() */
 #include<ctype.h>     /* for isdigit(char ) */
@@ -69,11 +62,6 @@ int is_operator(char symbol)
 	return 0;
 	}
 }
-
-/* define fucntion that is used to assign precendence to operator.
-* Here ^ denotes exponent operator.
-* In this fucntion we assume that higher integer value
-* means higher precendence */
 
 int precedence(char symbol)
 {
@@ -179,14 +167,7 @@ void InfixToPostfix(char infix_exp[], char postfix_exp[])
 /* main function begins */
 int main()
 {
-	char infix[SIZE], postfix[SIZE];         /* declare infix string and postfix string */
-
-	/* why we asked the user to enter infix expression
-	* in parentheses ( )
-	* What changes are required in porgram to
-	* get rid of this restriction since it is not
-	* in algorithm
-	* */
+	char infix[SIZE], postfix[SIZE];      
 	printf("ASSUMPTION: The infix expression contains single letter variables and single digit constants only.\n");
 	printf("\nEnter Infix expression : ");
 	gets(infix);
